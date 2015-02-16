@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Normalization Help Document</title>
+</head>
+
+<body>
+
+  <h1>Normalization Help </h1>
+  <p>This document gives you a brief introduction of plugin Normalization. Here is the Normalization interface:</p>
+  <img src="normalization.png" alt="Normalization" >
+  <h4>Raster Layer: </h4>
+  <p>Raster Layer combobox provides all the raster layers from QGis layers, from where users can choose anyone need to be normalised.  </p>
+  <h4>Norm Methods: </h4>
+  <p>Raster Layer combobox provides allows users to choose different normalization methods, such as MIN_MAX, LOGARITHMIC, QUADRATIC, INV-LOGIT, LOG-SQUARE, etc.. Here are brief explanations of those methods: </p>
+  <p>MIN_MAX Method, the fomula is <img src="minmax.png" alt="MIN_MAX Normalization" >. It implements a simple stretching of the input indicator ́s values. This can be suitable in many cases, but it is prone to be affected by the presence of outliers.All indicator values outside the considered rejection bounds are trimmed to the boundary values, therefore excluding the tails of the distribution which would have dominated the resulting probability</p>
+  <p>LOGARITHMIC Method, the fomula is <img src="logarithmic.png" alt="LOGARITHMIC Normalization" >.It helps toavoid be biased using MIN_MAX method.</p>
+  <p>QUADRATIC Method, the fomula is <img src="quadratic.png" alt="QUADRATIC Normalization" >. </p>
+  <p>INV-LOGIC Method, the fomula is <img src="inv_logic.png" alt="Inv-logic Normalization" >.It refers to a mapping based on a inverse logit functional, with two degree of freedom.β0 Defines the “baseline” probability, when the value of indicator is equal to zero. The coefficient β1 defines the sign of the conditional dependence.
+</p>
+  <p>LOG-SQUARE Method, the fomula is <img src="Log_square.png" alt="Log_Square Normalization" >.</p>
+  <p> In all the fomulas above,Di is the particular indicator at the considered location.</p>
+<h4>Rejection Bound: </h4>
+  <p>For MIN_MAX method,let users input quantiles for calibration. For other methods, when Indicator value pairs are not provided, use them to calculate coefficients Beta0 and Beta1. Defaulted as 0 and 100 (For INV-LOGIT, to avoid infinity problem, defaulted as 1e-5 and 99.99999).  </p>
+  <h4>Indicator values X and Y: </h4>
+  <p>If Indicator value pairs are given, use least square method to get coefficients Beta0 and Beta1. Indicator value pairs are limited to 2~10.  </p>
+  <h4>Output Image: </h4>
+  <p>Users choose the image storage path and give the new normalized image a name.  </p>
+  <h4>Add to Canvas: </h4>
+  <p>When add to canvas is checked, the mormalized image will be automatically added to QGis layers.  </p>
+  <h4>Help Button: </h4>
+  <p>Show users the help document on click.  </p>
+
+  <br />
+  <p style="font-style:oblique"><b>For more information, please check the <a href="http://www.sensum-project.eu/" target="_blank">SENSUM PROJECT</a> ! </b></p>
+  <br />
+  <br />
+
+  <footer style="text-align:right; font-style:oblique; color:blue; font-size:80%">
+   <p>Copyright Dec.2014, Ying Wang from GFZ (visit <a href="http://www.gfz-potsdam.de/startseite/" target="_blank">GFZ</a>) </p>
+  </footer> 
+</body>
+
+</html> 
+

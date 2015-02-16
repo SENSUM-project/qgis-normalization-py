@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/Normalization" >
+        <file>icons/Norm.PNG</file>
+    </qresource>
+</RCC>
